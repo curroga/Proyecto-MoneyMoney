@@ -32,7 +32,11 @@ class Game {
       let nuevoEnemigo = new Enemigos()
       this.enemigosArr.push(nuevoEnemigo) 
 
-      let nuevoDinero = new Dinero()
+
+
+      let randomNum = Math.random() * 1000
+      let randmXint = Math.floor(randomNum)
+      let nuevoDinero = new Dinero(randmXint)
       this.dineroArr.push(nuevoDinero)
     }
   }

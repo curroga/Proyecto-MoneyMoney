@@ -4,10 +4,10 @@ class Personaje {
     this.img = new Image()
     this.img.src = "./images/enemigo.png"
     this.h = 60; 
-    this.w = 50; 
+    this.w = 20; 
     this.x = canvas.width/2; 
     this.y = canvas.height - this.h; 
-    this.speed = 0.5;
+    this.speed = 1;
     this.jumpSpeed = 120;
 
   }
@@ -22,10 +22,10 @@ class Personaje {
 
   movimientoPersonaje = (direccion) => {
     if(direccion === "derecha"){
-      this.x = this.x + 20
+      this.x = this.x + 30
     }
     if(direccion === "izquierda"){
-      this.x = this.x - 20
+      this.x = this.x - 30
     }
 
   }
