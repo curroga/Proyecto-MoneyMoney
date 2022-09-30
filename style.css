@@ -1,0 +1,37 @@
+body{
+  margin: 0;
+  background-color: rgb(188, 247, 188);
+}
+#my-canvas {
+  background-color: darkgray;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+}
+
+#start-btn, #restart-btn {
+  background-color: green;
+  color: white;
+  padding: 20px;
+  font-size: 20px;
+  margin-top: 40px;
+  border-radius: 10px; 
+}
+#añadir-usuario{
+  background-color: red;
+  color: yellow;
+  padding: 5px;
+  font-size: 15px;
+  margin-top: 20px;
+  border-radius: 5px; 
+  
+
+}
+#my-canvas, #gameover-screen, #gamewin-screen{
+  display: none;
+}

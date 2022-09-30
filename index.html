@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- SPLASH SCREEN -->
+    <div id="splash-screen" class="container">
+      <!-- imagen titulo -->
+      <img src="./images/money.png" alt="logo" width="500px">
+      <img src="./images/money.png" alt="logo" width="500px">
+      <!-- instrucciones -->
+      <div>
+        <p>Bienvenido al Juego. El juego consiste en ir recogiendo todo el dinero posible para comprar objetos de la tienda, una vez que compres todos los objetos ganaras, pero claro no sera tan facil tendras obstaculos que sortear. Para mover al personaje tendras que utilizar la tecla "a" para moverte para la izquierda, la tecla "d" para moverte hacia la derecha y la barra espaciadora para saltar</p>        
+      </div>
+      <!-- usuario -->
+      <div>
+      <input type="text">
+      <button id="añadir-usuario">Add</button>
+    </div>
+
+      <!-- boton -->
+      <button id="start-btn">Start!</button>
+      
+      <!-- marcador -->
+      <div>
+        <ul>Marcador</ul>
+        <li>Usuario</li>
+        <li>Score</li>
+      </div>
+    </div>
+
+
+
+    <!-- GAME SCREEN -->
+    <div>
+      <!-- canvas -->  
+      <canvas id="my-canvas" width="800", height="600"></canvas>    
+    </div>
+
+
+
+    <!--GAME OVER SCREEN  -->
+    <div id="gameover-screen">
+      <!-- imagen game over -->      
+      <!-- boton de reset -->   
+    </div>
+
+
+
+    <!-- GAME WIN SCREEN -->
+    <div id="gamewin-screen">
+      <!-- imagen WIN -->      
+      <!-- boton de volver a jugar -->  
+    </div>
+
+  </div>
+
+  
+  <script src="./javascript/main.js"></script>
+  <script src="./javascript/game.js"></script>
+  <script src="./javascript/personaje.js"></script>
+  <script src="./javascript/enemigos.js"></script>
+</body>
+</html>
