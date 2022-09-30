@@ -10,6 +10,9 @@ class Game {
     this.frames = 0
     // personaje
     this.personajeObj = new Personaje()
+    // dinero
+    this.dineroObj = new Dinero()
+    this.dineroArr = []
     // tienda
   }
   //metodos
@@ -28,6 +31,9 @@ class Game {
     if (this.frames % 420 === 0){
       let nuevoEnemigo = new Enemigos()
       this.enemigosArr.push(nuevoEnemigo) 
+
+      let nuevoDinero = new Dinero()
+      this.dineroArr.push(nuevoDinero)
     }
   }
   // ! dudas si añdo los enemigos que salen dentro de addEnemigos me aparareceran a la vez, tendria que crear otra funcion para crear los enemigos de la izquierda?  EN ESE CASO NECESITARIA OTRO ENEMIGO EN OTRA POSICION
@@ -45,17 +51,27 @@ class Game {
     this.enemigosArr.forEach((eachEnemigos) => {
       eachEnemigos.movEnemigos()
     })
+    this.dineroArr.forEach((eachDinero) => {
+      eachDinero.movDinero()
+    })
     this.addEnemigos()
     this.enemigosObj.movEnemigos()
+    this.dineroObj.movDinero()
     
 
     //3. dibujando los elementos
     this.drawFondo()
     this.personajeObj.drawPersonaje()
+
     this.enemigosObj.drawEnemigos()
     this.enemigosArr.forEach((eachEnemigos) => {
       eachEnemigos.drawEnemigos()
     })
+
+    this.dineroArr.forEach((eachDinero) => {
+      eachDinero.drawDinero()
+    })
+    this.dineroObj.drawDinero()
 
     //4. control de recursion
     requestAnimationFrame(this.gameLoop)
