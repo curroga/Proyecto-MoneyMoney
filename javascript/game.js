@@ -7,7 +7,12 @@ class Game {
     // enemigos
     this.enemigosObj = new Enemigos()
     this.enemigosArr = []
+    this.enemigosIzqObj = new EnemigosIzquierda()
+    this.enemigosArrIzq = []
+
     this.frames = 0
+    this.isGameOn = true;
+    this.dinero = 0;
     // personaje
     this.personajeObj = new Personaje()
     // dinero
@@ -16,8 +21,63 @@ class Game {
     // tienda
   }
   //metodos
-  // collision del personaje con los obstaculos
-  // movimientos de los obstaculos
+  // collisiones
+  collision = () => {
+    this.enemigosArr.forEach((eachEnemigos) => {
+      if(
+        this.personajeObj.x < eachEnemigos.x + eachEnemigos.w &&
+        this.personajeObj.x + this.personajeObj.w > eachEnemigos.x &&
+        this.personajeObj.y < eachEnemigos.y + eachEnemigos.h &&
+        this.personajeObj.h + this.personajeObj.y > eachEnemigos.y ){
+          console.log("colisision!!")
+          this.gameOver()
+        }
+    })
+    this.enemigosArrIzq.forEach((eachEnemigos) => {
+      if(
+        this.personajeObj.x < eachEnemigos.x + eachEnemigos.w &&
+        this.personajeObj.x + this.personajeObj.w > eachEnemigos.x &&
+        this.personajeObj.y < eachEnemigos.y + eachEnemigos.h &&
+        this.personajeObj.h + this.personajeObj.y > eachEnemigos.y ){
+          console.log("colisision izquierdas!!")
+          this.gameOver()
+          
+        }
+    })
+    this.dineroArr.forEach((eachEnemigos) => {
+      if(
+        this.personajeObj.x < eachEnemigos.x + eachEnemigos.w &&
+        this.personajeObj.x + this.personajeObj.w > eachEnemigos.x &&
+        this.personajeObj.y < eachEnemigos.y + eachEnemigos.h &&
+        this.personajeObj.h + this.personajeObj.y > eachEnemigos.y ){
+          this.contarDinero()
+          
+          
+        }
+    })
+
+  }
+  gameOver = () => {
+    this.isGameOn = false
+    canvas.style.display = "none"
+    gameOverScreen.style.display = "block"
+    
+  }
+  contarDinero = () => {
+    this.dinero ++;
+    console.log(this.dinero)
+  }
+  quitarObjetos = () => {
+    if(this.enemigosArr.length !== 0 && this.enemigosArr[0].x > 850){
+      this.enemigosArr.shift() // desaperece lado derecho
+    }
+    if(this.enemigosArrIzq.length !== 0 && this.enemigosArrIzq[0].x < -50){
+      this.enemigosArrIzq.shift() // desaperece lado izquierdo
+    }
+    if(this.dineroArr.length !== 0 && this.dineroArr[0].y > 550){
+      this.dineroArr.shift() // desaparece abajo
+    }
+  }
   
   // dibujar el fondo
   drawFondo = () => {
@@ -28,19 +88,25 @@ class Game {
   // dibujar la tienda
 
   addEnemigos = () => {
-    if (this.frames % 420 === 0){
-      let nuevoEnemigo = new Enemigos()
-      this.enemigosArr.push(nuevoEnemigo) 
-
-
-
-      let randomNum = Math.random() * 1000
+    if(this.frames % 180 === 0){
+      let randomNum = Math.random() * 1000 
       let randmXint = Math.floor(randomNum)
       let nuevoDinero = new Dinero(randmXint)
       this.dineroArr.push(nuevoDinero)
     }
+    if (this.frames % 420 === 0){
+      let nuevoEnemigo = new Enemigos()
+      this.enemigosArr.push(nuevoEnemigo) 
+
+    }
+    if (this.frames % 480 === 0){
+      let nuevoEnemigoIzq = new EnemigosIzquierda()
+      this.enemigosArrIzq.push(nuevoEnemigoIzq) 
+
+    }
+    
   }
-  // ! dudas si añdo los enemigos que salen dentro de addEnemigos me aparareceran a la vez, tendria que crear otra funcion para crear los enemigos de la izquierda?  EN ESE CASO NECESITARIA OTRO ENEMIGO EN OTRA POSICION
+  
   
 
 
@@ -50,18 +116,28 @@ class Game {
 
     //1. limpiar el canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+
+
     //2. acciones de movimientos de los elementos
     this.personajeObj.gravedadPersonaje()
     this.enemigosArr.forEach((eachEnemigos) => {
       eachEnemigos.movEnemigos()
     })
+    this.enemigosArrIzq.forEach((eachEnemigos) => {
+      eachEnemigos.movEnemigos()
+    })
     this.dineroArr.forEach((eachDinero) => {
       eachDinero.movDinero()
     })
+
+
     this.addEnemigos()
-    this.enemigosObj.movEnemigos()
-    this.dineroObj.movDinero()
+    this.collision()
+    this.quitarObjetos()
     
+
+
 
     //3. dibujando los elementos
     this.drawFondo()
@@ -71,13 +147,21 @@ class Game {
     this.enemigosArr.forEach((eachEnemigos) => {
       eachEnemigos.drawEnemigos()
     })
+    this.enemigosArrIzq.forEach((eachEnemigos) => {
+      eachEnemigos.drawEnemigos()
+    })
 
     this.dineroArr.forEach((eachDinero) => {
       eachDinero.drawDinero()
     })
     this.dineroObj.drawDinero()
 
+
+
+
     //4. control de recursion
+    if (this.isGameOn === true){
     requestAnimationFrame(this.gameLoop)
+    }
   }
 }

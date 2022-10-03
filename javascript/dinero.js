@@ -17,3 +17,6 @@ class Dinero {
     this.y = this.y + this.speed
   }
 }
+
+// ! COMO HACER PARA QUE SALGAN MAS BILLETESS Y CONTROLAR EL RANGO DE SALIDA DE LOS BILLETES
+// podria hacerlo con varias condiciones en addEnemmigos?

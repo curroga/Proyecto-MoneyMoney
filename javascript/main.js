@@ -5,6 +5,8 @@ const canvas = document.querySelector("#my-canvas")
 const ctx = canvas.getContext("2d")
 const startScreen = document.querySelector("#splash-screen")
 const startBtn = document.querySelector("#start-btn")
+const gameOverScreen = document.querySelector("#gameover-screen")
+const resetBtn = document.querySelector("#reset-btn")
 
 
 
@@ -30,6 +32,21 @@ const startGame = () => {
 
 }
 
+const resetGame = () => {
+  console.log("iniciando el juego")
+
+  // ocultar la pantalla de inicio
+  gameOverScreen.style.display = "none"
+
+  // mostrar canvas
+  canvas.style.display = "block"
+
+  // iniciará el juego
+  gameObj = new Game()
+  gameObj.gameLoop()
+
+}
+
 
 
 
@@ -37,6 +54,7 @@ const startGame = () => {
 
 // * ADD EVENT LISTERNERS
 startBtn.addEventListener("click", startGame)
+resetBtn.addEventListener("click", resetGame)
 
 window.addEventListener("keydown", (event) => {
   if(event.code === "Space"){
