@@ -19,6 +19,8 @@ class Game {
     this.dineroObj = new Dinero()
     this.dineroArr = []
     // tienda
+    this.tiendaObj = new Tienda()
+    
   }
   //metodos
   // collisiones
@@ -30,7 +32,7 @@ class Game {
         this.personajeObj.y < eachEnemigos.y + eachEnemigos.h &&
         this.personajeObj.h + this.personajeObj.y > eachEnemigos.y ){
           console.log("colisision!!")
-          this.gameOver()
+          //this.gameOver()
         }
     })
     this.enemigosArrIzq.forEach((eachEnemigos) => {
@@ -40,7 +42,7 @@ class Game {
         this.personajeObj.y < eachEnemigos.y + eachEnemigos.h &&
         this.personajeObj.h + this.personajeObj.y > eachEnemigos.y ){
           console.log("colisision izquierdas!!")
-          this.gameOver()
+          //this.gameOver()
           
         }
     })
@@ -50,8 +52,7 @@ class Game {
         this.personajeObj.x + this.personajeObj.w > eachEnemigos.x &&
         this.personajeObj.y < eachEnemigos.y + eachEnemigos.h &&
         this.personajeObj.h + this.personajeObj.y > eachEnemigos.y ){
-          this.contarDinero()
-          
+          this.contarDinero()         
           
         }
     })
@@ -63,9 +64,22 @@ class Game {
     gameOverScreen.style.display = "block"
     
   }
+  gameWin = () => {
+    this.isGameOn = false
+    canvas.style.display = "none"
+    gameWinScreen.style.display = "block"
+  }
   contarDinero = () => {
     this.dinero ++;
+    this.dineroArr.shift()
     console.log(this.dinero)
+    console.log(this.tiendaObj.drawTienda.objeto1 = "")
+    if(this.dinero >=1){
+      this.tiendaObj.drawTienda.objeto1 = ""
+    }
+    if(this.dinero === 10){
+      this.gameWin()
+    }
   }
   quitarObjetos = () => {
     if(this.enemigosArr.length !== 0 && this.enemigosArr[0].x > 850){
@@ -74,7 +88,7 @@ class Game {
     if(this.enemigosArrIzq.length !== 0 && this.enemigosArrIzq[0].x < -50){
       this.enemigosArrIzq.shift() // desaperece lado izquierdo
     }
-    if(this.dineroArr.length !== 0 && this.dineroArr[0].y > 550){
+    if(this.dineroArr.length !== 0 && this.dineroArr[0].y > 650){
       this.dineroArr.shift() // desaparece abajo
     }
   }
@@ -83,9 +97,15 @@ class Game {
   drawFondo = () => {
     ctx.drawImage(this.fondo, 0, 0, canvas.width, canvas.height)
   }
+  drawScore = () => {
+    ctx.font = "30px Arial"
+    let scoreStr =`Dinero: ${this.dinero*100}$`
+    ctx.fillText(scoreStr, canvas.width * 0.4, 50)
+  }
   
-  // dibujar obstaculos
+  
   // dibujar la tienda
+
 
   addEnemigos = () => {
     if(this.frames % 180 === 0){
@@ -155,6 +175,8 @@ class Game {
       eachDinero.drawDinero()
     })
     this.dineroObj.drawDinero()
+    this.drawScore()
+    this.tiendaObj.drawTienda()
 
 
 
