@@ -1,6 +1,7 @@
 console.log("Probando la consola")
 
 // * GLOBAL VARIABLES
+const gameScreen = document.querySelector("#game-screen")
 const canvas = document.querySelector("#my-canvas")
 const ctx = canvas.getContext("2d")
 const startScreen = document.querySelector("#splash-screen")
@@ -10,13 +11,7 @@ const resetBtn = document.querySelector("#reset-btn")
 const gameWinScreen = document.querySelector("#gamewin-screen")
 const volverAjugarBtn = document.querySelector("#volver-btn")
 
-
-
-
 let gameObj;
-
-
-
 
 // * STATE MANAGEMENT FUNCTIONS
 
@@ -27,7 +22,7 @@ const startGame = () => {
   startScreen.style.display = "none"
 
   // mostrar canvas
-  canvas.style.display = "block"
+  canvas.style.display = "block"  
 
   // iniciará el juego
   gameObj = new Game()
@@ -43,7 +38,9 @@ const resetGame = () => {
   gameWinScreen.style.display = "none"
 
   // mostrar canvas
-  canvas.style.display = "block"
+  canvas.style.display = "flex"
+  
+
 
   // iniciará el juego
   gameObj = new Game()
@@ -60,9 +57,6 @@ const volverInicio = () => {
   startScreen.style.display = "flex"   
 
 }
-
-
-
 
 
 

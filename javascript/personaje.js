@@ -33,7 +33,7 @@ class Personaje {
   }
   gravedadPersonaje = () => {
     if (this.y < 539) {
-      console.log(this.y) 
+      //console.log(this.y) 
       this.y = this.y + this.speed
     
    } 

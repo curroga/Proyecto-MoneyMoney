@@ -24,6 +24,14 @@ class Game {
     this.coin.src = "./sounds/coin.wav"
     // tienda
     this.tiendaObj = new Tienda()
+    // cascos
+    this.cascosObj = new Cascos()
+    // reloj
+    this.relojObj = new Reloj()
+    // tablet
+    this.tabletObj = new Tablet()
+    // Pc
+    this.pcObj = new Pc()
     
   }
   //metodos
@@ -37,7 +45,7 @@ class Game {
         this.personajeObj.h + this.personajeObj.y > eachEnemigos.y ){
           console.log("colisision!!")
           this.lose.play()
-          this.gameOver()
+          //this.gameOver()
         }
     })
     this.enemigosArrIzq.forEach((eachEnemigos) => {
@@ -47,7 +55,7 @@ class Game {
         this.personajeObj.y < eachEnemigos.y + eachEnemigos.h &&
         this.personajeObj.h + this.personajeObj.y > eachEnemigos.y ){
           console.log("colisision izquierdas!!")
-          this.gameOver()
+          //this.gameOver()
           this.lose.play()          
         }
     })
@@ -67,6 +75,7 @@ class Game {
     this.isGameOn = false
     canvas.style.display = "none"
     gameOverScreen.style.display = "block"
+
     
   }
   gameWin = () => {
@@ -79,9 +88,9 @@ class Game {
     this.coin.play()
     this.dineroArr.shift()
     console.log(this.dinero)
-    console.log(this.tiendaObj.drawTienda.objeto1 = "")
+    
     if(this.dinero >=1){
-      this.tiendaObj.drawTienda.objeto1 = ""
+      //this.tiendaObj.borrarElementos()
     }
     if(this.dinero === 10){
       this.gameWin()
@@ -97,6 +106,7 @@ class Game {
     if(this.dineroArr.length !== 0 && this.dineroArr[0].y > 650){
       this.dineroArr.shift() // desaparece abajo
     }
+    
   }
   
   // dibujar el fondo
@@ -183,6 +193,18 @@ class Game {
     this.dineroObj.drawDinero()
     this.drawScore()
     this.tiendaObj.drawTienda()
+    if(this.dinero <2){
+      this.cascosObj.drawObjeto()
+    }
+    if(this.dinero <4){
+      this.relojObj.drawObjeto()
+      }
+    if(this.dinero <7){
+        this.tabletObj.drawObjeto()
+      }
+    if(this.dinero <10){
+        this.pcObj.drawObjeto()
+      } 
 
 
 
