@@ -23,10 +23,10 @@ class Personaje {
   }
 
   movimientoPersonaje = (direccion) => {
-    if(direccion === "derecha"){
+    if(direccion === "derecha" && this.x < canvas.width-this.w){
       this.x = this.x + 35
     }
-    if(direccion === "izquierda"){
+    if(direccion === "izquierda" && this.x > 0){
       this.x = this.x - 35
     }
 

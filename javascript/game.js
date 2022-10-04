@@ -45,7 +45,7 @@ class Game {
         this.personajeObj.h + this.personajeObj.y > eachEnemigos.y ){
           console.log("colisision!!")
           this.lose.play()
-          //this.gameOver()
+          this.gameOver()
         }
     })
     this.enemigosArrIzq.forEach((eachEnemigos) => {
@@ -55,7 +55,7 @@ class Game {
         this.personajeObj.y < eachEnemigos.y + eachEnemigos.h &&
         this.personajeObj.h + this.personajeObj.y > eachEnemigos.y ){
           console.log("colisision izquierdas!!")
-          //this.gameOver()
+          this.gameOver()
           this.lose.play()          
         }
     })
