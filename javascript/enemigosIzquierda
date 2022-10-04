@@ -2,8 +2,8 @@ class EnemigosIzquierda {
 
   constructor(){
     this.img = new Image()
-    this.img.src = "./images/enemigo.png"
-    this.w = 20
+    this.img.src = "./images/ladron.png"
+    this.w = 60
     this.h = 60
     this.x = 850
     this.y = canvas.height - this.h

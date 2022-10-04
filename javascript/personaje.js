@@ -2,13 +2,13 @@ class Personaje {
 
   constructor(){
     this.img = new Image()
-    this.img.src = "./images/enemigo.png"
+    this.img.src = "./images/personajePrincipal.png"
     this.h = 60; 
-    this.w = 20; 
+    this.w = 60; 
     this.x = canvas.width/2; 
     this.y = canvas.height - this.h; 
     this.speed = 1;
-    this.jumpSpeed = 120;
+    this.jumpSpeed = 130;
 
   }
   // metodos
@@ -24,10 +24,10 @@ class Personaje {
 
   movimientoPersonaje = (direccion) => {
     if(direccion === "derecha"){
-      this.x = this.x + 30
+      this.x = this.x + 35
     }
     if(direccion === "izquierda"){
-      this.x = this.x - 30
+      this.x = this.x - 35
     }
 
   }

@@ -1,7 +1,7 @@
 class Tienda {
   constructor(){
     this.img = new Image ()
-    this.img.src = "./images/enemigo.png" // puedo poner un array de imagenes?
+    this.img.src = "./images/pc.png" // puedo poner un array de imagenes?
     this.w = 30
     this.h = 30
     this.x = 640

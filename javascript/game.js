@@ -9,6 +9,8 @@ class Game {
     this.enemigosArr = []
     this.enemigosIzqObj = new EnemigosIzquierda()
     this.enemigosArrIzq = []
+    this.lose = new Audio()
+    this.lose.src = "./sounds/lose.wav"
 
     this.frames = 0
     this.isGameOn = true;
@@ -18,6 +20,8 @@ class Game {
     // dinero
     this.dineroObj = new Dinero()
     this.dineroArr = []
+    this.coin = new Audio()
+    this.coin.src = "./sounds/coin.wav"
     // tienda
     this.tiendaObj = new Tienda()
     
@@ -27,23 +31,24 @@ class Game {
   collision = () => {
     this.enemigosArr.forEach((eachEnemigos) => {
       if(
-        this.personajeObj.x < eachEnemigos.x + eachEnemigos.w &&
-        this.personajeObj.x + this.personajeObj.w > eachEnemigos.x &&
+        this.personajeObj.x+30 < eachEnemigos.x + eachEnemigos.w &&
+        this.personajeObj.x-30 + this.personajeObj.w > eachEnemigos.x &&
         this.personajeObj.y < eachEnemigos.y + eachEnemigos.h &&
         this.personajeObj.h + this.personajeObj.y > eachEnemigos.y ){
           console.log("colisision!!")
-          //this.gameOver()
+          this.lose.play()
+          this.gameOver()
         }
     })
     this.enemigosArrIzq.forEach((eachEnemigos) => {
       if(
-        this.personajeObj.x < eachEnemigos.x + eachEnemigos.w &&
-        this.personajeObj.x + this.personajeObj.w > eachEnemigos.x &&
+        this.personajeObj.x+30 < eachEnemigos.x + eachEnemigos.w &&
+        this.personajeObj.x-30 + this.personajeObj.w > eachEnemigos.x &&
         this.personajeObj.y < eachEnemigos.y + eachEnemigos.h &&
         this.personajeObj.h + this.personajeObj.y > eachEnemigos.y ){
           console.log("colisision izquierdas!!")
-          //this.gameOver()
-          
+          this.gameOver()
+          this.lose.play()          
         }
     })
     this.dineroArr.forEach((eachEnemigos) => {
@@ -71,6 +76,7 @@ class Game {
   }
   contarDinero = () => {
     this.dinero ++;
+    this.coin.play()
     this.dineroArr.shift()
     console.log(this.dinero)
     console.log(this.tiendaObj.drawTienda.objeto1 = "")

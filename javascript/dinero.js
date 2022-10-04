@@ -2,7 +2,7 @@ class Dinero {
 
   constructor (xParam){
     this.img = new Image()
-    this.img.src = "./images/dolar.png"
+    this.img.src = "./images/fajoBillete.png"
     this.w = 30
     this.h = 30
     this.x = xParam
