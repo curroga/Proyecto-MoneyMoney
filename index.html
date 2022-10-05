@@ -23,7 +23,7 @@
       </div>
       <!-- usuario -->
       <div>
-      <input type="text">
+      <input type="text" id="name" placeholder="Añade tu Nombre">
       <button id="añadir-usuario">Add</button>
     </div>
 
@@ -31,11 +31,10 @@
       <button id="start-btn">Start!</button>
 
       <!-- marcador -->
-      <div>
-        <ul>Marcador</ul>
-        <li>Usuario</li>
-        <li>Score</li>
-      </div>
+      <!-- <div class="marcador">
+        <h3>Marcador:</h3>
+        <ul id="output-list"></ul>
+      </div> -->
     </div>
 
 
@@ -52,7 +51,14 @@
     <div id="gameover-screen">
             
       <img src="./images/gameover.png" alt="">
-      <button id="reset-btn">Reset!</button>
+      <div>
+        <button id="reset-btn">Reset!</button>
+      </div>
+      
+      <div class="marcador">
+        <h3>Marcador:</h3>
+        <ul id="output-list"></ul>
+      </div>
 
     </div>
 
@@ -60,9 +66,18 @@
 
     <!-- GAME WIN SCREEN -->
     <div id="gamewin-screen">
-      <!-- imagen WIN -->      
-      <!-- boton de volver a jugar --> 
-      <button id="volver-btn">Volver a jugar</button>
+      <!-- imagen WIN -->
+      <!-- <img src="./images/win.png" alt=""> -->
+
+      <!-- boton de volver a jugar -->
+      <div>
+        <button id="volver-btn">Volver a jugar</button>
+      </div> 
+      
+      <div class="marcador">
+        <h3>Marcador:</h3>
+        <ul id="output-list"></ul>
+      </div>
 
     </div>
 

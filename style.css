@@ -2,7 +2,7 @@
 body {
 	box-sizing: border-box;
 	min-height: 98vh;
-	width: 80vw;
+	width: 99vw;
 	display: flex;
 	align-content: center;
 	justify-content: center;
@@ -17,11 +17,14 @@ span {
 	--scaler: 20vw;
 	font-family: "Moderat", sans-serif;	
 	font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));	
-	background: url("./images/fajoBillete.png");
+	background: url("../images/fajoBillete.png");
 	background-size: auto 5%;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	
+}
+p {
+  width: 50vw;
 }
 
 #my-canvas {
@@ -67,5 +70,23 @@ span {
   font-size: 20px;
   margin-top: 40px;
   border-radius: 10px;
+}
+#gamewin-screen button {
+  background-color: rgb(201, 20, 20);
+  color: rgb(221, 224, 41);
+  padding: 20px;
+  font-size: 20px;
+  margin-top: 40px;
+  border-radius: 10px;
+}
+.marcador {
+  color: white;  
+}
+
+.marcador h3{
+  font-size: 50px;
+}
+.marcador li{
+  font-size: 25px;
 }
 

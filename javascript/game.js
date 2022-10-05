@@ -75,13 +75,23 @@ class Game {
     this.isGameOn = false
     canvas.style.display = "none"
     gameOverScreen.style.display = "block"
+    this.crearLista()
+  }
+  crearLista = () => {
+    // 2. crear elemento de DOM 
+    let newElement = document.createElement("li")
+    newElement.innerText = `Nº de Intentos:${intentos} ------> Jugador: ${textToAdd} ------> Dinero: ${this.dinero*100}$`
+    console.log(newElement)
+    console.log(listDOM)
+  // 3. agregar el nuevo elemento a la lista
+  listDOM.append(newElement)
 
-    
   }
   gameWin = () => {
     this.isGameOn = false
     canvas.style.display = "none"
     gameWinScreen.style.display = "block"
+    this.crearLista()
   }
   contarDinero = () => {
     this.dinero ++;
