@@ -1,22 +1,17 @@
 class EnemigosIzquierda {
-
-  constructor(){
-    this.img = new Image()
-    this.img.src = "./images/ladron.png"
-    this.w = 60
-    this.h = 60
-    this.x = 850
-    this.y = canvas.height - this.h
-    this.speed = 1
-    
-  
+  constructor() {
+    this.img = new Image();
+    this.img.src = "./images/ladron.png";
+    this.w = 60;
+    this.h = 60;
+    this.x = 850;
+    this.y = canvas.height - this.h;
+    this.speed = 1;
   }
-  drawEnemigos = () =>{
-    ctx.drawImage(this.img, this.x, this.y, this.w, this.h)
-    
-  }
+  drawEnemigos = () => {
+    ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
+  };
   movEnemigos = () => {
-    this.x = this.x - this.speed
-  }
-  
+    this.x = this.x - this.speed;
+  };
 }

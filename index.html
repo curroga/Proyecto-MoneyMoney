@@ -1,100 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-
-  <div class="container">
-
-    <!-- SPLASH SCREEN -->
-    <div id="splash-screen" class="container">
-      <!-- imagen titulo -->
-      <!-- <img src="./images/money.png" alt="logo" width="500px">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- SPLASH SCREEN -->
+      <div id="splash-screen" class="container">
+        <!-- imagen titulo -->
+        <!-- <img src="./images/money.png" alt="logo" width="500px">
       <img src="./images/money.png" alt="logo" width="500px"> -->
-      <span>Money Money</span>
-      <!-- instrucciones -->
-      <div>
-        <p>Bienvenido al Juego. El juego consiste en ir recogiendo todo el dinero posible para comprar objetos de la tienda, una vez que compres todos los objetos ganaras, pero claro no sera tan facil tendras obstaculos que sortear. Para mover al personaje tendras que utilizar la tecla "a" para moverte para la izquierda, la tecla "d" para moverte hacia la derecha y la barra espaciadora para saltar</p>        
-      </div>
-      <!-- usuario -->
-      <div>
-      <input type="text" id="name" placeholder="Añade tu Nombre">
-      <button id="añadir-usuario">Add</button>
-    </div>
+        <span>Money Money</span>
+        <!-- instrucciones -->
+        <div>
+          <p>
+            Bienvenido al Juego. El juego consiste en ir recogiendo todo el
+            dinero posible para comprar objetos de la tienda, una vez que
+            compres todos los objetos ganaras, pero claro no sera tan facil
+            tendras obstaculos que sortear. Para mover al personaje tendras que
+            utilizar la tecla "a" para moverte para la izquierda, la tecla "d"
+            para moverte hacia la derecha y la barra espaciadora para saltar
+          </p>
+        </div>
+        <!-- usuario -->
+        <div>
+          <input type="text" id="name" placeholder="Añade tu Nombre" />
+          <button id="añadir-usuario">Add</button>
+        </div>
 
-      <!-- boton -->
-      <button id="start-btn">Start!</button>
+        <!-- boton -->
+        <button id="start-btn">Start!</button>
 
-      <!-- marcador -->
-      <!-- <div class="marcador">
+        <!-- marcador -->
+        <!-- <div class="marcador">
         <h3>Marcador:</h3>
         <ul id="output-list"></ul>
       </div> -->
-    </div>
+      </div>
 
-
-
-    <!-- GAME SCREEN -->
-    <div>
-      <!-- canvas -->   
-      <canvas id="my-canvas", width="800", height="600"></canvas>              
-    </div>
-
-
-
-    <!--GAME OVER SCREEN  -->
-    <div id="gameover-screen">
-            
-      <img src="./images/gameover.png" alt="">
+      <!-- GAME SCREEN -->
       <div>
-        <button id="reset-btn">Reset!</button>
-      </div>
-      
-      <div class="marcador">
-        <h3>Marcador:</h3>
-        <ul id="output-list"></ul>
+        <!-- canvas -->
+        <canvas id="my-canvas" , width="800" , height="600"></canvas>
       </div>
 
+      <!--GAME OVER SCREEN  -->
+      <div id="gameover-screen">
+        <img src="./images/gameover.png" alt="" />
+        <div>
+          <button id="reset-btn">Reset!</button>
+        </div>
+
+        <div class="marcador">
+          <h3>Marcador:</h3>
+          <ul id="output-list"></ul>
+        </div>
+      </div>
+
+      <!-- GAME WIN SCREEN -->
+      <div id="gamewin-screen">
+        <!-- imagen WIN -->
+        <!-- <img src="./images/win.png" alt=""> -->
+
+        <!-- boton de volver a jugar -->
+        <div>
+          <button id="volver-btn">Volver a jugar</button>
+        </div>
+
+        <div class="marcador">
+          <h3>Marcador:</h3>
+          <ul id="output-list"></ul>
+        </div>
+      </div>
     </div>
 
-
-
-    <!-- GAME WIN SCREEN -->
-    <div id="gamewin-screen">
-      <!-- imagen WIN -->
-      <!-- <img src="./images/win.png" alt=""> -->
-
-      <!-- boton de volver a jugar -->
-      <div>
-        <button id="volver-btn">Volver a jugar</button>
-      </div> 
-      
-      <div class="marcador">
-        <h3>Marcador:</h3>
-        <ul id="output-list"></ul>
-      </div>
-
-    </div>
-
-  </div>
-
-  
-  <script src="./javascript/main.js"></script>
-  <script src="./javascript/game.js"></script>
-  <script src="./javascript/personaje.js"></script>
-  <script src="./javascript/enemigos.js"></script>
-  <script src="./javascript/dinero.js"></script>
-  <script src="./javascript/enemigosIzquierda"></script>
-  <script src="./javascript/tienda.js"></script>
-  <script src="./javascript/airpods.js"></script>
-  <script src="./javascript/reloj.js"></script>
-  <script src="./javascript/tablet.js"></script>
-  <script src="./javascript/pc.js"></script>
-
-</body>
+    <script src="./javascript/main.js"></script>
+    <script src="./javascript/game.js"></script>
+    <script src="./javascript/personaje.js"></script>
+    <script src="./javascript/enemigos.js"></script>
+    <script src="./javascript/dinero.js"></script>
+    <script src="./javascript/enemigosIzquierda"></script>
+    <script src="./javascript/tienda.js"></script>
+    <script src="./javascript/airpods.js"></script>
+    <script src="./javascript/reloj.js"></script>
+    <script src="./javascript/tablet.js"></script>
+    <script src="./javascript/pc.js"></script>
+  </body>
 </html>

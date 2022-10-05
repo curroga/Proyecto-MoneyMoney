@@ -1,27 +1,24 @@
-
 body {
-	box-sizing: border-box;
-	min-height: 98vh;
-	width: 99vw;
-	display: flex;
-	align-content: center;
-	justify-content: center;
-	align-items: center;
-	background: radial-gradient(ellipse at bottom, #0d584e 0%, #000000 100%);
+  box-sizing: border-box;
+  min-height: 98vh;
+  width: 99vw;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(ellipse at bottom, #0d584e 0%, #000000 100%);
   text-align: center;
-
 }
 span {
-	--minFontSize: 2rem;
-	--maxFontSize: calc(var(--minFontSize) * 6);
-	--scaler: 20vw;
-	font-family: "Moderat", sans-serif;	
-	font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));	
-	background: url("../images/fajoBillete.png");
-	background-size: auto 5%;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	
+  --minFontSize: 2rem;
+  --maxFontSize: calc(var(--minFontSize) * 6);
+  --scaler: 20vw;
+  font-family: "Moderat", sans-serif;
+  font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
+  background: url("../images/fajoBillete.png");
+  background-size: auto 5%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 p {
   width: 50vw;
@@ -39,25 +36,26 @@ p {
   margin: 50px;
 }
 
-#start-btn, #restart-btn {
+#start-btn,
+#restart-btn {
   background-color: rgb(20, 201, 20);
   color: white;
   padding: 20px;
   font-size: 20px;
   margin-top: 40px;
-  border-radius: 10px; 
+  border-radius: 10px;
 }
-#añadir-usuario{
+#añadir-usuario {
   background-color: red;
   color: yellow;
   padding: 5px;
   font-size: 15px;
   margin-top: 20px;
-  border-radius: 5px; 
-  
-
+  border-radius: 5px;
 }
-#my-canvas, #gameover-screen, #gamewin-screen {
+#my-canvas,
+#gameover-screen,
+#gamewin-screen {
   display: none;
 }
 #splash-screen p {
@@ -80,13 +78,12 @@ p {
   border-radius: 10px;
 }
 .marcador {
-  color: white;  
+  color: white;
 }
 
-.marcador h3{
+.marcador h3 {
   font-size: 50px;
 }
-.marcador li{
+.marcador li {
   font-size: 25px;
 }
-
