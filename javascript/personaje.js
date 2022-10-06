@@ -22,9 +22,12 @@ class Personaje {
 
   movimientoPersonaje = (direccion) => {
     if (direccion === "derecha" && this.x < canvas.width - this.w) {
+    this.img.src = "./images/personajePrincipal.png";
+
       this.x = this.x + 35;
     }
     if (direccion === "izquierda" && this.x > 0) {
+    this.img.src = "./images/personajePrincipalvoltear.png"
       this.x = this.x - 35;
     }
   };

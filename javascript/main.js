@@ -13,6 +13,8 @@ const volverAjugarBtn = document.querySelector("#volver-btn");
 let inputDOM = document.querySelector("#name");
 let addButtonDOM = document.querySelector("#añadir-usuario");
 let listDOM = document.querySelector("#output-list");
+let marcadorDOM = document.querySelector(".marcador");
+
 
 let audioP = new Audio();
 audioP.src = "./sounds/abba.wav";
@@ -31,6 +33,7 @@ const startGame = () => {
 
   // ocultar la pantalla de inicio
   startScreen.style.display = "none";
+  marcadorDOM.style.display = "none"
 
   // mostrar canvas
   canvas.style.display = "block";
@@ -47,6 +50,7 @@ const resetGame = () => {
   // ocultar la pantalla de inicio
   gameOverScreen.style.display = "none";
   gameWinScreen.style.display = "none";
+  marcadorDOM.style.display = "none"
 
   // mostrar canvas
   canvas.style.display = "flex";

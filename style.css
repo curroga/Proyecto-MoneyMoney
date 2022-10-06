@@ -15,7 +15,7 @@ span {
   --scaler: 20vw;
   font-family: "Moderat", sans-serif;
   font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
-  background: url("../images/fajoBillete.png");
+  background: url("./images/fajoBillete.png");
   background-size: auto 5%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -55,7 +55,7 @@ p {
 }
 #my-canvas,
 #gameover-screen,
-#gamewin-screen {
+#gamewin-screen, .marcador {
   display: none;
 }
 #splash-screen p {
@@ -86,4 +86,8 @@ p {
 }
 .marcador li {
   font-size: 25px;
+}
+.marcadorwin {
+  font-size: 50px;
+  color: aliceblue;
 }

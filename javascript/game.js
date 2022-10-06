@@ -74,34 +74,32 @@ class Game {
     this.isGameOn = false;
     canvas.style.display = "none";
     gameOverScreen.style.display = "block";
+    marcadorDOM.style.display = "block"
+
     this.crearLista();
   };
   crearLista = () => {
     // 2. crear elemento de DOM
     let newElement = document.createElement("li");
-    newElement.innerText = `Nº de Intentos:${intentos} Jugador: ${textToAdd} Dinero: ${
-      this.dinero * 100
-    }$`;
+    newElement.innerText = `Jugador: ${textToAdd} ====> Dinero: ${this.dinero * 100}$ ====> Intento Nº:${intentos}`;
     console.log(newElement);
     console.log(listDOM);
     // 3. agregar el nuevo elemento a la lista
     listDOM.append(newElement);
+    
   };
   gameWin = () => {
     this.isGameOn = false;
     canvas.style.display = "none";
     gameWinScreen.style.display = "block";
+    marcadorDOM.style.display = "block"
     this.crearLista();
   };
   contarDinero = () => {
     this.dinero++;
     this.coin.play();
     this.dineroArr.shift();
-    console.log(this.dinero);
-
-    if (this.dinero >= 1) {
-      //this.tiendaObj.borrarElementos()
-    }
+    //console.log(this.dinero);    
     if (this.dinero === 10) {
       this.gameWin();
     }
@@ -132,7 +130,7 @@ class Game {
 
   addEnemigos = () => {
     if (this.frames % 180 === 0) {
-      let randomNum = Math.random() * 1000;
+      let randomNum = Math.random() * 800;
       let randmXint = Math.floor(randomNum);
       let nuevoDinero = new Dinero(randmXint);
       this.dineroArr.push(nuevoDinero);

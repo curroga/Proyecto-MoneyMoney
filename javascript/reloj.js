@@ -1,7 +1,7 @@
 class Reloj {
   constructor() {
     this.img = new Image();
-    this.img.src = "./images/movil.png"; // puedo poner un array de imagenes?
+    this.img.src = "./images/movil.png";
     this.w = 30;
     this.h = 30;
     this.x = 640;
