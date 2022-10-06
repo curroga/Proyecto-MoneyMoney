@@ -11,7 +11,6 @@ const resetBtn = document.querySelector("#reset-btn");
 const gameWinScreen = document.querySelector("#gamewin-screen");
 const volverAjugarBtn = document.querySelector("#volver-btn");
 let inputDOM = document.querySelector("#name");
-let addButtonDOM = document.querySelector("#añadir-usuario");
 let listDOM = document.querySelector("#output-list");
 let marcadorDOM = document.querySelector(".marcador");
 
@@ -24,11 +23,40 @@ let gameObj;
 let textToAdd;
 let intentos = 1;
 
+// add as global variables
+let fps = 0; // will hold the detected FPS 1 second after starting the page. Can be used from within the game.
+let testGoing = true
+
+
 // * STATE MANAGEMENT FUNCTIONS
+
+const detectFPS = () => {
+  setTimeout(() => {
+    testGoing = false; // to stop recursion frame counter after 1 second.
+    console.log("detected FPS", fps)
+    // * if starting game with button, unlock button here
+  }, 1000)
+}
+
+const framesRecursion = () => {
+  if (testGoing === true) {
+    fps++ // increase FPS until stop at 1 second.
+    console.log("counting frames") // remove after testing.
+    requestAnimationFrame(framesRecursion)
+  }
+}
+
+window.addEventListener("load", () => {
+  detectFPS()
+  framesRecursion()
+})
+
 
 const startGame = () => {
   audioP.play();
   intentos = 1;
+  textToAdd = inputDOM.value;
+  console.log(textToAdd);
   console.log("iniciando el juego");
 
   // ocultar la pantalla de inicio
@@ -45,6 +73,8 @@ const startGame = () => {
 
 const resetGame = () => {
   intentos++;
+  audioP.play();
+
   console.log("reseteando el juego");
 
   // ocultar la pantalla de inicio
@@ -68,14 +98,7 @@ const volverInicio = () => {
 
   startScreen.style.display = "flex";
 };
-function addUser() {
-  // 1. extraer lo que vamos a agregar
-  textToAdd = inputDOM.value;
-  console.log(textToAdd);
-}
 
-// * ADD EVENT LISTERNERS
-addButtonDOM.addEventListener("click", addUser);
 
 startBtn.addEventListener("click", startGame);
 resetBtn.addEventListener("click", resetGame);
