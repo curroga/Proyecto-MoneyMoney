@@ -91,3 +91,11 @@ p {
   font-size: 50px;
   color: aliceblue;
 }
+#gameover-screen img{
+  width: 20vw;
+  height: 30vh;
+}
+#gamewin-screen img{
+  width: 10vw;
+  height: 20vh;
+}
