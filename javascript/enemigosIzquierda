@@ -7,7 +7,7 @@ class EnemigosIzquierda {
     this.x = 850;
     this.y = canvas.height - this.h;
     if(fps<70){
-    this.speed = 1.5;
+    this.speed = 2.5;
     } else{
       this.speed = 1
     }
