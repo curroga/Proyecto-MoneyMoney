@@ -35,6 +35,8 @@ const detectFPS = () => {
     testGoing = false; // to stop recursion frame counter after 1 second.
     console.log("detected FPS", fps)
     // * if starting game with button, unlock button here
+    startBtn.addEventListener("click", startGame);
+
   }, 1000)
 }
 
@@ -100,7 +102,6 @@ const volverInicio = () => {
 };
 
 
-startBtn.addEventListener("click", startGame);
 resetBtn.addEventListener("click", resetGame);
 volverAjugarBtn.addEventListener("click", volverInicio);
 
