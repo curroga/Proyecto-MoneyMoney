@@ -6,7 +6,11 @@ class Dinero {
     this.h = 30;
     this.x = xParam;
     this.y = 10;
-    this.speed = 1;
+    if(fps<70){
+      this.speed = 2.5;
+      } else{
+        this.speed = 1
+      }
   }
   //metodos
   drawDinero = () => {

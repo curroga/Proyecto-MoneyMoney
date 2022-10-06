@@ -6,7 +6,11 @@ class Enemigos {
     this.h = 60;
     this.x = -50;
     this.y = canvas.height - this.h;
-    this.speed = 1;
+    if(fps<70){
+      this.speed = 2.5;
+      } else{
+        this.speed = 1
+      }    
   }
   drawEnemigos = () => {
     ctx.drawImage(this.img, this.x, this.y, this.w, this.h);

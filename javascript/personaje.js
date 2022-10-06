@@ -6,7 +6,11 @@ class Personaje {
     this.w = 60;
     this.x = canvas.width / 2;
     this.y = canvas.height - this.h;
-    this.speed = 1;
+    if(fps<70){
+      this.speed = 2.5;
+      } else{
+        this.speed = 1
+      }
     this.jumpSpeed = 130;
   }
   // metodos

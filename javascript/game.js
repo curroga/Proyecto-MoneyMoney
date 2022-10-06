@@ -31,6 +31,13 @@ class Game {
     this.tabletObj = new Tablet();
     // Pc
     this.pcObj = new Pc();
+    // Velocidad fps
+    if(fps<70){
+      this.speed = 2.5;
+      } else{
+        this.speed = 1
+      }
+
   }
   //metodos
   // collisiones
@@ -129,17 +136,17 @@ class Game {
   // dibujar la tienda
 
   addEnemigos = () => {
-    if (this.frames % 180 === 0) {
+    if (this.frames % (180/this.speed) === 0) {
       let randomNum = Math.random() * 800;
       let randmXint = Math.floor(randomNum);
       let nuevoDinero = new Dinero(randmXint);
       this.dineroArr.push(nuevoDinero);
     }
-    if (this.frames % 420 === 0) {
+    if (this.frames % (420/this.speed) === 0) {
       let nuevoEnemigo = new Enemigos();
       this.enemigosArr.push(nuevoEnemigo);
     }
-    if (this.frames % 480 === 0) {
+    if (this.frames % (480/this.speed) === 0) {
       let nuevoEnemigoIzq = new EnemigosIzquierda();
       this.enemigosArrIzq.push(nuevoEnemigoIzq);
     }
