@@ -75,7 +75,7 @@ const resetGame = () => {
   intentos++;
   audioP.play();
 
-  console.log("reseteando el juego");
+  //console.log("reseteando el juego");
 
   // ocultar la pantalla de inicio
   gameOverScreen.style.display = "none";
