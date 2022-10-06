@@ -37,6 +37,8 @@ class Game {
       } else{
         this.speed = 1
       }
+      // contador
+      this.contador = 0
 
   }
   //metodos
@@ -88,7 +90,7 @@ class Game {
   crearLista = () => {
     // 2. crear elemento de DOM
     let newElement = document.createElement("li");
-    newElement.innerText = `Jugador: ${textToAdd} ====> Dinero: ${this.dinero * 100}$ ====> Intento Nº:${intentos}`;
+    newElement.innerText = `Jugador: ${textToAdd} ====> Dinero: ${this.contador * 100}$ ====> Intento Nº:${intentos}`;
     console.log(newElement);
     console.log(listDOM);
     // 3. agregar el nuevo elemento a la lista
@@ -104,10 +106,20 @@ class Game {
   };
   contarDinero = () => {
     this.dinero++;
+    this.contador++
     this.coin.play();
     this.dineroArr.shift();
-    //console.log(this.dinero);    
-    if (this.dinero === 10) {
+    //console.log(this.dinero); 
+    if (this.contador === 2 && this.dinero ===2){
+      this.contador = this.contador-2
+    }
+    if (this.contador === 4 && this.dinero ===6){
+      this.contador = this.contador-4
+    }
+    if (this.contador === 7 && this.dinero ===13){
+      this.contador = this.contador-7
+    }   
+    if (this.dinero === 23) {
       this.gameWin();
     }
   };
@@ -129,7 +141,7 @@ class Game {
   };
   drawScore = () => {
     ctx.font = "30px Arial";
-    let scoreStr = `Dinero: ${this.dinero * 100}$`;
+    let scoreStr = `Dinero: ${this.contador * 100}$`;
     ctx.fillText(scoreStr, canvas.width * 0.4, 50);
   };
 
@@ -196,13 +208,13 @@ class Game {
     if (this.dinero < 2) {
       this.cascosObj.drawObjeto();
     }
-    if (this.dinero < 4) {
+    if (this.dinero < 6) {
       this.relojObj.drawObjeto();
     }
-    if (this.dinero < 7) {
+    if (this.dinero < 13) {
       this.tabletObj.drawObjeto();
     }
-    if (this.dinero < 10) {
+    if (this.dinero < 23) {
       this.pcObj.drawObjeto();
     }
 
