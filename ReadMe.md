@@ -21,72 +21,202 @@ NOTE: above link will be added later
 
 # Description
 
-Add here a simple description of your game.
+El juego consiste en ir recogiendo todo el dinero posible, algunos billetes serán falsos y otros valdrán el doble. Mientras vas recogiendo el dinero, tendrás que ir sorteando obstáculos.
+El juego terminará cuando compres todos los objetos de la tienda o en su defecto cuando un obstáculo te toca, aunque en este último caso tendrás la opción de reiniciar el juego si te toca el obstáculo
 
-Personaje que va recogiendo dinero para comprar objetos de la tienada, con la dificultad de ir solteando obstaculos
 
 # Main Functionalities
 
-- List here the main functionalities your game will have
+- Detectar FPS
+- Empezar el juego
+- Resetear el juego
+- Volver a la pantalla de Inicio
+- Asignar teclas para movimientos
+
+# Backlog Functionalities
 
 - Movimiento del personaje
 - Movimiento de los obstaculos
 - Colision con los obstaculos
 - Movimieto del dinero
+- Crear una lista
+- Game over
+- Game win
+- Contar dinero recogido
+- Quitar objetos
+- Dibujar personaje, enemigos, obstaculos
 
-# Backlog Functionalities
-
-- List here the cool (but not essential) functionalities your game could have
-
-# Proyect Structure
-
-- List here the JS files you think you might need. 
-- One main.js to manage DOM elements, one for Game class and one for each other class.
-- Recommended: Inside each file you can list the functions, clases, properties and methods you will need.
-
-Example:
+# Proyect Structure 
 
 ## main.js
 
 - startGame()
+- resetGame()
+- volverInicio()
+- detectFPS()
+- framesRecursion()
 
 ## game.js
 
 - Game () {
-    this.player;
+    this.personajeObj;
+    this.enemigoObjs;
+    this.enemigosIzquierdaObj;
+    this.dineroObj;
+    this.relojObj;
+    this.cascosObj;
+    this.tabletObj;
+    this.pcObj;
+    this.tiendaObj;
 }
 - gameLoop () {}
-- checkCollisions () {}
+- collision () {}
+- gameOver () {}
+- gameWin () {}
+- crearLista () {}
+- contarDinero () {}
+- quitarObjetos () {}
+- drawFondo () {}
+- drawScore () {}
+- addEnemigos () {}
 
-## player.js 
+## persojaje.js 
 
-- Player () {
-    this.x;
-    this.y;
+- Personaje () {
+    this.img;
     this.w;
     this.h;
+    this.x;
+    this.y;
+    if(fps<70){
+      this.speed;
+      } else{
+        this.speed;
+      }
+    this.jumpSpeed;
 }
-- drawPlayer () {}
-- movePlayer () {}
+- drawPersonaje () {}
+- movimientoPersonaje () {}
+- saltoPersonaje () {}
+- gravedadPersonaje () {}
+
+## enemigos.js 
+
+- Enemigos () {
+    this.img;
+    this.w;
+    this.h;
+    this.x;
+    this.y;
+    if(fps<70){
+      this.speed;
+      } else{
+        this.speed;
+      }
+}
+- drawEnemigos () {}
+- movEnemigos () {}
+## enemigosIzquierda.js 
+
+- EnemigosIzquierda () {
+    this.img;
+    this.w;
+    this.h;
+    this.x;
+    this.y;
+    if(fps<70){
+      this.speed;
+      } else{
+        this.speed;
+      }
+}
+- drawEnemigos () {}
+- movEnemigos () {}
+
+## dinero.js 
+
+- Dinero () {
+    this.img;
+    this.w;
+    this.h;
+    this.x;
+    this.y;
+    if(fps<70){
+      this.speed;
+      } else{
+        this.speed;
+      }
+}
+- drawDinero () {}
+- movDinero () {}
+
+## tienda.js 
+
+- Tienda () {
+    this.img;
+    this.w;
+    this.h;
+    this.x;
+    this.y;   
+}
+- drawTienda () {}
+
+## reloj.js 
+
+- Reloj () {
+    this.img;
+    this.w;
+    this.h;
+    this.x;
+    this.y;   
+}
+- drawObjeto () {}
+
+## tablet.js 
+
+- Tablet () {
+    this.img;
+    this.w;
+    this.h;
+    this.x;
+    this.y;   
+}
+- drawObjeto () {}
+
+## airpods.js 
+
+- Cascos () {
+    this.img;
+    this.w;
+    this.h;
+    this.x;
+    this.y;   
+}
+- drawObjeto () {}
+
+## pc.js 
+
+- Pc () {
+    this.img;
+    this.w;
+    this.h;
+    this.x;
+    this.y;   
+}
+- drawObjeto () {}
 
 # States and Transitions
-
-- List here the different pages your game will have. For example: Start Screen, Game Screen, Win Screen, etc.
 
 - SPLASH SCREEN
 - GAME SCREEN
 - GAME OVER SCREEN
 - GAME WIN SCREEN
 
-# Tasks (Optional)
-
-- List of individual Tasks you will need to finish the game from zero to an amazing game!
-- Note: If using Trello or github proyect to keep track of tasks, then you can remove this section.
 
 # Extra Links (The links can be added later when available)
 
-### Trello
-[Link](www.your-url-here.com)
+### gitHub
+[Link] https://curroga.github.io/Proyecto-MoneyMoney/
 
 ### Slides
-[Link](www.your-url-here.com)                      
+[Link]                       
