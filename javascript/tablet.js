@@ -9,7 +9,7 @@ class Tablet {
     this.objeto1 = `Tablet: 700$`;
   }
   drawObjeto = () => {
-    ctx.font = "15px Arial";
+    ctx.font = "15px Moderat";
     ctx.fillStyle = "black"
 
     ctx.fillText(this.objeto1, this.x + 40, this.y + 120);

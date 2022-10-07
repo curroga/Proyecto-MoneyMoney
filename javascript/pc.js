@@ -9,7 +9,7 @@ class Pc {
     this.objeto1 = `Pc: 1000$`;
   }
   drawObjeto = () => {
-    ctx.font = "15px Arial";
+    ctx.font = "15px Moderat";
     ctx.fillStyle = "black"
 
     ctx.fillText(this.objeto1, this.x + 40, this.y + 170);

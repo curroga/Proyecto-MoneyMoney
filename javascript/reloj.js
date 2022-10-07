@@ -9,7 +9,7 @@ class Reloj {
     this.objeto1 = `Movil: 400$`;
   }
   drawObjeto = () => {
-    ctx.font = "15px Arial";
+    ctx.font = "15px Moderat";
     ctx.fillStyle = "black"
     ctx.fillText(this.objeto1, this.x + 40, this.y + 70);
     ctx.drawImage(this.img, this.x, this.y + 50, this.w, this.h);

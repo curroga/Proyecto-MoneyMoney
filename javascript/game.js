@@ -142,8 +142,8 @@ class Game {
     ctx.drawImage(this.fondo, 0, 0, canvas.width, canvas.height);
   };
   drawScore = () => {
-    ctx.font = "30px Arial";
-    ctx.fillStyle = "green"
+    ctx.font = "30px Moderat";
+    ctx.fillStyle = "darkgreen"
 
     let scoreStr = `Dinero: ${this.contador * 100}$`;
     ctx.fillText(scoreStr, canvas.width * 0.4, 50);
@@ -193,7 +193,7 @@ class Game {
 
     //3. dibujando los elementos
     this.drawFondo();
-    this.tiendaObj.drawTienda();
+    this.tiendaObj.drawTienda(this.dinero);
     this.personajeObj.drawPersonaje();
 
     this.enemigosObj.drawEnemigos();
