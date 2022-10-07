@@ -1,19 +1,4 @@
-Planificacion del Proyecto
-
-Titulo del Proyecto: Money Money
-  Va a consistir en que un personaje tiene que ir recogiendo dinero que van cayendo del cielo y sorteando obstaculos (enemigos),que pueden venir desde la izquierda o/y derecha. Cada vez que cojas dinero va ir contando el dinero que has cogido, dependiendo del dinero que cojas podras comprarte varias objetos de la tienda, cuando hayas comprado todo has ganado y sino has comprado todo porque te han matado los enemigos, tendras que reiniciar
-
-
-  // propiedades: Personaje Principal, enemigos, fondo, tienda
-
-
-  // fucncinalidades: 
-  mover personaje de derecha a izquierda y que el personaje salte,
-  contar el dinero que vayas recogiendo (dependiendo de cuanto dinero comprar), 
-  movimientos de los obstaculos, colision co  obstaculos (tanto enemigo como con el dinero), 
-  cada vez que vayas comprando de la tienda que  desapareciendo el obj
-
-# NAME OF YOUR PROYECT MONEY MONEY
+# MONEY MONEY
 
 
 ## [See the Game](www.your-url-here.com)
