@@ -10,7 +10,7 @@ class Cascos {
   }
   drawObjeto = () => {
     ctx.font = "15px Moderat";
-    ctx.fillStyle = "black"
+    ctx.fillStyle = "black";
 
     ctx.fillText(this.objeto1, this.x + 40, this.y + 20);
     ctx.drawImage(this.img, this.x, this.y, this.w, this.h);

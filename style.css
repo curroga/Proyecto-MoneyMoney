@@ -55,7 +55,8 @@ p {
 }
 #my-canvas,
 #gameover-screen,
-#gamewin-screen, .marcador {
+#gamewin-screen,
+.marcador {
   display: none;
 }
 #splash-screen p {
@@ -91,11 +92,11 @@ p {
   font-size: 50px;
   color: aliceblue;
 }
-#gameover-screen img{
+#gameover-screen img {
   width: 20vw;
   height: 30vh;
 }
-#gamewin-screen img{
+#gamewin-screen img {
   width: 10vw;
   height: 20vh;
 }

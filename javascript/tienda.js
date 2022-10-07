@@ -13,22 +13,22 @@ class Tienda {
     ctx.fillText(tienda, this.x + 20, this.y - 10);
     
     if (money<2){
-    ctx.beginPath() // inicia un trazado complejo
-    ctx.strokeStyle = "darkblue" // para color de trazado
-    ctx.lineWidth = 3 // para cambiar el ancho de la linea
-    ctx.moveTo(630, 45) // mover el cursor a donde empezar el trazado
-    // (posX, posY)
-    ctx.lineTo(780, 45) // a donde va el cursos trazando
-    // .. de aqui hacemos más trazados o más movimiendos del cursor
+    ctx.beginPath() 
+    ctx.strokeStyle = "darkblue" 
+    ctx.lineWidth = 3 
+    ctx.moveTo(630, 45) 
+    
+    ctx.lineTo(780, 45) 
+    
     ctx.lineTo(780, 240)
     ctx.lineTo(630, 240)
     ctx.lineTo(630, 45)
 
-    ctx.stroke() // realiza el trazado hasta este punto
+    ctx.stroke() 
 
-    ctx.fillStyle = "lightgreen" // color de relleno
-    ctx.fill() // rellena todo el trazado (con el ultimo color de fillStyle)
-    ctx.closePath() // aqui termina el trazado
+    ctx.fillStyle = "lightgreen" 
+    ctx.fill() 
+    ctx.closePath() 
     }
     else if (money>=2 && money<6){
       ctx.beginPath() 

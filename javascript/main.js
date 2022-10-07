@@ -14,10 +14,9 @@ let inputDOM = document.querySelector("#name");
 let listDOM = document.querySelector("#output-list");
 let marcadorDOM = document.querySelector(".marcador");
 
-
 let audioP = new Audio();
 audioP.src = "./sounds/abba.wav";
-audioP.volume = 0.05
+audioP.volume = 0.05;
 
 let gameObj;
 
@@ -26,34 +25,31 @@ let intentos = 1;
 
 // add as global variables
 let fps = 0; // will hold the detected FPS 1 second after starting the page. Can be used from within the game.
-let testGoing = true
-
+let testGoing = true;
 
 // * STATE MANAGEMENT FUNCTIONS
 
 const detectFPS = () => {
   setTimeout(() => {
     testGoing = false; // to stop recursion frame counter after 1 second.
-    console.log("detected FPS", fps)
+    console.log("detected FPS", fps);
     // * if starting game with button, unlock button here
     startBtn.addEventListener("click", startGame);
-
-  }, 1000)
-}
+  }, 1000);
+};
 
 const framesRecursion = () => {
   if (testGoing === true) {
-    fps++ // increase FPS until stop at 1 second.
-    console.log("counting frames") // remove after testing.
-    requestAnimationFrame(framesRecursion)
+    fps++; // increase FPS until stop at 1 second.
+    console.log("counting frames"); // remove after testing.
+    requestAnimationFrame(framesRecursion);
   }
-}
+};
 
 window.addEventListener("load", () => {
-  detectFPS()
-  framesRecursion()
-})
-
+  detectFPS();
+  framesRecursion();
+});
 
 const startGame = () => {
   audioP.play();
@@ -64,7 +60,7 @@ const startGame = () => {
 
   // ocultar la pantalla de inicio
   startScreen.style.display = "none";
-  marcadorDOM.style.display = "none"
+  marcadorDOM.style.display = "none";
 
   // mostrar canvas
   canvas.style.display = "block";
@@ -83,7 +79,7 @@ const resetGame = () => {
   // ocultar la pantalla de inicio
   gameOverScreen.style.display = "none";
   gameWinScreen.style.display = "none";
-  marcadorDOM.style.display = "none"
+  marcadorDOM.style.display = "none";
 
   // mostrar canvas
   canvas.style.display = "flex";
@@ -101,7 +97,6 @@ const volverInicio = () => {
 
   startScreen.style.display = "flex";
 };
-
 
 resetBtn.addEventListener("click", resetGame);
 volverAjugarBtn.addEventListener("click", volverInicio);
