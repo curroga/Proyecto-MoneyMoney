@@ -17,6 +17,7 @@ let marcadorDOM = document.querySelector(".marcador");
 
 let audioP = new Audio();
 audioP.src = "./sounds/abba.wav";
+audioP.volume = 0.05
 
 let gameObj;
 
