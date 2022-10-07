@@ -10,6 +10,8 @@ class Pc {
   }
   drawObjeto = () => {
     ctx.font = "15px Arial";
+    ctx.fillStyle = "black"
+
     ctx.fillText(this.objeto1, this.x + 40, this.y + 170);
     ctx.drawImage(this.img, this.x, this.y + 150, this.w, this.h);
   };

@@ -10,6 +10,8 @@ class Tablet {
   }
   drawObjeto = () => {
     ctx.font = "15px Arial";
+    ctx.fillStyle = "black"
+
     ctx.fillText(this.objeto1, this.x + 40, this.y + 120);
     ctx.drawImage(this.img, this.x, this.y + 100, this.w, this.h);
   };
