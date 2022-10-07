@@ -1,5 +1,3 @@
-console.log("Probando la consola");
-
 // * GLOBAL VARIABLES
 const gameScreen = document.querySelector("#game-screen");
 const canvas = document.querySelector("#my-canvas");
@@ -32,7 +30,7 @@ let testGoing = true;
 const detectFPS = () => {
   setTimeout(() => {
     testGoing = false; // to stop recursion frame counter after 1 second.
-    console.log("detected FPS", fps);
+    //console.log("detected FPS", fps);
     // * if starting game with button, unlock button here
     startBtn.addEventListener("click", startGame);
   }, 1000);
@@ -41,7 +39,7 @@ const detectFPS = () => {
 const framesRecursion = () => {
   if (testGoing === true) {
     fps++; // increase FPS until stop at 1 second.
-    console.log("counting frames"); // remove after testing.
+    //console.log("counting frames"); // remove after testing.
     requestAnimationFrame(framesRecursion);
   }
 };
@@ -55,8 +53,6 @@ const startGame = () => {
   audioP.play();
   intentos = 1;
   textToAdd = inputDOM.value;
-  console.log(textToAdd);
-  console.log("iniciando el juego");
 
   // ocultar la pantalla de inicio
   startScreen.style.display = "none";
@@ -74,8 +70,6 @@ const resetGame = () => {
   intentos++;
   audioP.play();
 
-  //console.log("reseteando el juego");
-
   // ocultar la pantalla de inicio
   gameOverScreen.style.display = "none";
   gameWinScreen.style.display = "none";
@@ -89,8 +83,6 @@ const resetGame = () => {
   gameObj.gameLoop();
 };
 const volverInicio = () => {
-  console.log("volver a inicio");
-
   // ocultar la pantalla de inicio
   gameOverScreen.style.display = "none";
   gameWinScreen.style.display = "none";

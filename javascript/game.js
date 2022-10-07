@@ -50,7 +50,6 @@ class Game {
         this.personajeObj.y < eachEnemigos.y + eachEnemigos.h &&
         this.personajeObj.h + this.personajeObj.y > eachEnemigos.y
       ) {
-        console.log("colisision!!");
         this.lose.play();
         this.gameOver();
       }
@@ -62,7 +61,6 @@ class Game {
         this.personajeObj.y < eachEnemigos.y + eachEnemigos.h &&
         this.personajeObj.h + this.personajeObj.y > eachEnemigos.y
       ) {
-        console.log("colisision izquierdas!!");
         this.gameOver();
         this.lose.play();
       }
@@ -92,8 +90,7 @@ class Game {
     newElement.innerText = `Jugador: ${textToAdd} ====> Dinero: ${
       this.contScore * 100
     }$ ====> Intento Nº:${intentos}`;
-    console.log(newElement);
-    console.log(listDOM);
+
     //agregar el nuevo elemento a la lista
     listDOM.append(newElement);
   };
