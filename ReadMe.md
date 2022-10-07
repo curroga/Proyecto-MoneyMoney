@@ -1,14 +1,13 @@
 # MONEY MONEY
 
+## [See the Game](https://curroga.github.io/Proyecto-MoneyMoney/)
 
-## [See the Game](www.your-url-here.com)
-NOTE: above link will be added later
+
 
 # Description
 
 El juego consiste en ir recogiendo todo el dinero posible, algunos billetes serán falsos y otros valdrán el doble. Mientras vas recogiendo el dinero, tendrás que ir sorteando obstáculos.
 El juego terminará cuando compres todos los objetos de la tienda o en su defecto cuando un obstáculo te toca, aunque en este último caso tendrás la opción de reiniciar el juego si te toca el obstáculo
-
 
 # Main Functionalities
 
@@ -31,7 +30,7 @@ El juego terminará cuando compres todos los objetos de la tienda o en su defect
 - Quitar objetos
 - Dibujar personaje, enemigos, obstaculos
 
-# Proyect Structure 
+# Proyect Structure
 
 ## main.js
 
@@ -44,16 +43,16 @@ El juego terminará cuando compres todos los objetos de la tienda o en su defect
 ## game.js
 
 - Game () {
-    this.personajeObj;
-    this.enemigoObjs;
-    this.enemigosIzquierdaObj;
-    this.dineroObj;
-    this.relojObj;
-    this.cascosObj;
-    this.tabletObj;
-    this.pcObj;
-    this.tiendaObj;
-}
+  this.personajeObj;
+  this.enemigoObjs;
+  this.enemigosIzquierdaObj;
+  this.dineroObj;
+  this.relojObj;
+  this.cascosObj;
+  this.tabletObj;
+  this.pcObj;
+  this.tiendaObj;
+  }
 - gameLoop () {}
 - collision () {}
 - gameOver () {}
@@ -65,129 +64,130 @@ El juego terminará cuando compres todos los objetos de la tienda o en su defect
 - drawScore () {}
 - addEnemigos () {}
 
-## persojaje.js 
+## persojaje.js
 
 - Personaje () {
-    this.img;
-    this.w;
-    this.h;
-    this.x;
-    this.y;
-    if(fps<70){
-      this.speed;
-      } else{
-        this.speed;
-      }
-    this.jumpSpeed;
-}
+  this.img;
+  this.w;
+  this.h;
+  this.x;
+  this.y;
+  if(fps<70){
+  this.speed;
+  } else{
+  this.speed;
+  }
+  this.jumpSpeed;
+  }
 - drawPersonaje () {}
 - movimientoPersonaje () {}
 - saltoPersonaje () {}
 - gravedadPersonaje () {}
 
-## enemigos.js 
+## enemigos.js
 
 - Enemigos () {
-    this.img;
-    this.w;
-    this.h;
-    this.x;
-    this.y;
-    if(fps<70){
-      this.speed;
-      } else{
-        this.speed;
-      }
-}
+  this.img;
+  this.w;
+  this.h;
+  this.x;
+  this.y;
+  if(fps<70){
+  this.speed;
+  } else{
+  this.speed;
+  }
+  }
 - drawEnemigos () {}
 - movEnemigos () {}
-## enemigosIzquierda.js 
+
+## enemigosIzquierda.js
 
 - EnemigosIzquierda () {
-    this.img;
-    this.w;
-    this.h;
-    this.x;
-    this.y;
-    if(fps<70){
-      this.speed;
-      } else{
-        this.speed;
-      }
-}
+  this.img;
+  this.w;
+  this.h;
+  this.x;
+  this.y;
+  if(fps<70){
+  this.speed;
+  } else{
+  this.speed;
+  }
+  }
 - drawEnemigos () {}
 - movEnemigos () {}
 
-## dinero.js 
+## dinero.js
 
 - Dinero () {
-    this.img;
-    this.w;
-    this.h;
-    this.x;
-    this.y;
-    if(fps<70){
-      this.speed;
-      } else{
-        this.speed;
-      }
-}
+  this.img;
+  this.w;
+  this.h;
+  this.x;
+  this.y;
+  if(fps<70){
+  this.speed;
+  } else{
+  this.speed;
+  }
+  }
 - drawDinero () {}
 - movDinero () {}
 
-## tienda.js 
+## tienda.js
 
 - Tienda () {
-    this.img;
-    this.w;
-    this.h;
-    this.x;
-    this.y;   
-}
+  this.img;
+  this.w;
+  this.h;
+  this.x;
+  this.y;  
+  }
 - drawTienda () {}
 
-## reloj.js 
+## reloj.js
 
 - Reloj () {
-    this.img;
-    this.w;
-    this.h;
-    this.x;
-    this.y;   
-}
+  this.img;
+  this.w;
+  this.h;
+  this.x;
+  this.y;  
+  }
 - drawObjeto () {}
 
-## tablet.js 
+## tablet.js
 
 - Tablet () {
-    this.img;
-    this.w;
-    this.h;
-    this.x;
-    this.y;   
-}
+  this.img;
+  this.w;
+  this.h;
+  this.x;
+  this.y;  
+  }
 - drawObjeto () {}
 
-## airpods.js 
+## airpods.js
 
 - Cascos () {
-    this.img;
-    this.w;
-    this.h;
-    this.x;
-    this.y;   
-}
+  this.img;
+  this.w;
+  this.h;
+  this.x;
+  this.y;  
+  }
 - drawObjeto () {}
 
-## pc.js 
+## pc.js
 
 - Pc () {
-    this.img;
-    this.w;
-    this.h;
-    this.x;
-    this.y;   
-}
+  this.img;
+  this.w;
+  this.h;
+  this.x;
+  this.y;  
+  }
 - drawObjeto () {}
 
 # States and Transitions
@@ -196,12 +196,3 @@ El juego terminará cuando compres todos los objetos de la tienda o en su defect
 - GAME SCREEN
 - GAME OVER SCREEN
 - GAME WIN SCREEN
-
-
-# Extra Links (The links can be added later when available)
-
-### gitHub
-[Link] https://curroga.github.io/Proyecto-MoneyMoney/
-
-### Slides
-[Link]                       
